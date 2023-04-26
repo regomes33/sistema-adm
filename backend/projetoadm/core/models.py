@@ -31,7 +31,7 @@ class Posto(models.Model):
 
 
 class Graduacao(models.Model):
-    graduacao = models.CharField('graduação', max_length=50, blank=True, null=True)
+    graduacao = models.CharField('graduaçao', max_length=50, blank=True, null=True)
 
     class Meta:
         ordering = ('graduacao',)
@@ -39,7 +39,7 @@ class Graduacao(models.Model):
         verbose_name_plural = 'graduações'
 
     def __str__(self):
-        return self.graduacao
+        return f'{self.graduacao}'
 
 class VTR(models.Model):
     placa=models.CharField('placa',max_length=10,null=True,blank=True)
@@ -59,7 +59,7 @@ class Policial(models.Model):
 
     nome = models.CharField('nome', max_length=50, null=True)
     sobrenome = models.CharField('sobrenome', max_length=50, null=True)
-    rg_militar = models.IntegerField('rg militar', unique=True, null=True)
+    rg_militar = models.CharField('rg militar',max_length=8, unique=True, null=True)
     cpf = models.CharField('cpf', max_length=15, unique=True, null=True)
     
     # escala = models.ForeignKey(
@@ -74,36 +74,36 @@ class Policial(models.Model):
 
 
     posto = models.ForeignKey(
-        'Posto',
-        on_delete=models.CASCADE,
-        verbose_name='posto',
-        related_name='policial',
+        Posto,
+        on_delete=models.CASCADE, 
         null=True,
         blank=True
     )
 
     graduacao = models.ForeignKey(
-        'Graduacao',
-        on_delete=models.SET_NULL,
-        verbose_name='graduação',
+        Graduacao,
+        on_delete=models.CASCADE,
         null=True,
         blank=True
     )
+    
+  
+
 
     def __str__(self):
        return f'{self.cpf} {self.rg_militar} {self.nome} '
 
-    # def to_dict_base(self):
-    #     return{
-    #         'pk':self.pk,
-    #         'nome':self.nome,
-    #         'sobrenome':self.sobrenome,
-    #         'rg_militar': self.rg_militar,
-    #         'cpf':self.cpf,
-    #         'graduacao':self.graduacao,
-    #         'posto':self.posto
+    """ def to_dict_base(self):
+        return{
+            'pk':self.pk,
+            'nome':self.nome,
+            'sobrenome':self.sobrenome,
+            'rg_militar': self.rg_militar,
+            'cpf':self.cpf,
+            'graduacao':self.graduacao,
+            'posto':self.posto
 
-    #     }
+        } """
 
 
 

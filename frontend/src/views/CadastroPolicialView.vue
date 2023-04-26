@@ -6,8 +6,8 @@
   </div>
 </template>
 
-<script >
-import PolicialForm from "../components/PolicialFom.vue"
+<script>
+import PolicialForm from "../components/PolicialForm.vue"
 export default {
   name: "CadastroPolicialView",
   components:{

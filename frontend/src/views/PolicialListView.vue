@@ -8,10 +8,10 @@
 import Banner from "../components/Banner.vue";
 import PolicialList from "../components/PolicialList.vue"
 export default {
-  name: "Home",
+  name: "PolicialListView",
   components: {
-    Banner,
     PolicialList,
+    Banner,
   },
 };
 </script>

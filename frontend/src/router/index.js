@@ -26,17 +26,25 @@ const router = createRouter({
       component: () => import('../views/CadastroEscalaView.vue')
     },
     {
-      path: '/cadastropolicial',
-      name: 'cadastropolicial',
+      path:'/list/policiais',
+      name:'listarpolicial',
+      component: () => import('../views/PolicialListView.vue')
+
+    },
+    
+    {
+      path: '/policiais/add',
+      name: 'addpolicial',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/CadastroPolicialView.vue')
     },
+    
     {
-      path:'/policiallist',
-      name:'/policiallist',
-      component: () => import('../views/PolicialListView.vue')
+      path:'/policialdetail/:id',
+      name:'/policialdetail',
+      component: () => import('../views/PolicialDetailView.vue')
 
     }
   ]

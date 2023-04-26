@@ -4,15 +4,13 @@
       <img :src="logo" :alt="alt" id="logo" />
     </router-link>
     <router-link to="/">Home</router-link>
-    <router-link to="/about" >About</router-link>
-    <router-link to="/cadastro">Cadastrar Escala</router-link>
-    <router-link to="/cadastropolicial">Cadastrar Policial</router-link>
-    <router-link to="/policiallist">Lista de Policiais</router-link>
+    <router-link to="/list/policiais">Lista de Policiais</router-link>
+    <router-link to="/about" >Sobre o Sistema</router-link>
 
   </div>
 </template>
 
-<script >
+<script>
 export default {
   name: "Navbar",
   props:["logo","alt"] ,

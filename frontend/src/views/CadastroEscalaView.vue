@@ -1,18 +1,18 @@
 
 <template>
-<div class="main-container">
-  <h1> Cadastro de escalas</h1>
-</div>
+  <div class="main-container">
+    <h1>Cadastro de escalas</h1>
+  </div>
 </template>
 
-<script >
+<script>
 export default {
   name: "CadastroView",
 };
 </script>
 
 <style >
- .body{
+.body {
   background-color: aliceblue;
- }
+}
 </style>
